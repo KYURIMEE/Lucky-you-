@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Podkova', serif;
+    text-align: center;
+    background: url('images9/contact_back.png') no-repeat center center;
+    background-size: cover; /* ✅ 여기! */
+    background-attachment: fixed; /* ✨ 스크롤해도 배경 고정 */
+    background-position-y: -450px;
+  }
+  
+  .background {
+    position: fixed;
+    top: 0;
+    left: -10;
+    width: 100%;
+    height: 100%;
+    z-index: -5;
+  }
+
+  .logo-wrapper {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .logo img {
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .image-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 100px;
+    padding-bottom: 100px;
+    margin-top: 0;
+  }
+  
+  .image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-width: 100vw;
+  }
+
+  .image-wrapper img:nth-child(1) {
+    width: 300px;  /* 첫 번째 이미지 너비 */
+    transform: rotate(-2deg);
+    transform: scale(1.2);
+    margin-bottom: 100px; /* 이미지 간 간격 */
+    position: relative;     /* ✅ 필수! */
+    top: 170px; 
+  }
+  
+  .image-wrapper img:nth-child(2) {
+    width: 340px;  /* 두 번째 이미지 너비 */
+    transform: rotate(2deg);  /* 기울이기 (선택) */
+    position: relative; 
+    top: 120px; 
+  }
+
+  .copyright {
+    position: absolute;
+    top: 91vh;               /* 화면 세로의 80% 지점 (원하는 위치로 조정 가능) */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    color: rgb(255, 255, 255, 0.7);
+  }
+
+  a {
+    text-decoration: none;
+  }
+  
+  .image-wrapper a:first-of-type:hover {
+    cursor: url('images9/contact_cursor1.png') 16 16, auto;
+  }
+
+  .image-wrapper a:nth-of-type(2):hover {
+    cursor: url('images9/contact_cursor2.png') 16 16, auto;
+  }

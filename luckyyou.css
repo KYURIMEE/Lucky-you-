@@ -1,0 +1,81 @@
+@font-face {
+    font-family: 'Chaumont Script';
+    src: url('assets/Chaumont_scriptBeta-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: #FDF1D4;
+    text-align: center;
+    font-family: 'Courier Prime', monospace;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    overflow-x: auto; /* 가로 스크롤 활성화 */
+    white-space: nowrap;
+}
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('images/background.png') no-repeat center center;
+    background-size: cover;
+    z-index: -1;
+}
+
+.main-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    white-space: nowrap;
+}
+.main-image {
+    display: flex;
+    gap: 20px;
+    flex-wrap: nowrap;
+}
+.main-image img {
+    height: auto;
+}
+.main-image img:nth-child(1) { 
+    width: 250px; 
+    height: auto;
+}
+.main-image img:nth-child(2) { 
+    width: 250px; 
+    height: auto;
+}
+.menu {
+    position: absolute;
+    top: 7.3%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 70px;
+    color: #4B3621;
+    z-index: 1;
+}
+.menu .menu-item {
+    cursor: pointer;
+}
+
+.menu-item_01 a {
+    color: inherit; /* 부모의 색상 따라가기 */
+    text-decoration: none; /* 밑줄 제거 */
+    font-size: 100px; /* 원하는 크기 (네가 원하는 사이즈로 바꾸기) */
+  }
+
+.menu-item_02 {
+    font-size: 100px;  /* 왼쪽 메뉴와 동일 크기 */
+    font-weight: 800;  /* 굵게 */
+    color: inherit;
+}

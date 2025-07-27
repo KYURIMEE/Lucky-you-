@@ -1,0 +1,454 @@
+@font-face {
+    font-family: 'Chaumont Script';
+    src: url('Chaumont_scriptBeta-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  
+  /* Question!! */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    height: 100%;
+  }
+  
+  body {
+    font-family: 'Podkova', serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    height: 100%;
+  }
+  
+  .background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('images8/made.back.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: top;
+    z-index: -1;
+  }
+  
+  .flex-container {
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+    padding: 150px 60px 60px 60px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    width: 100vw;
+    box-sizing: border-box;
+    scrollbar-width: auto;
+  }
+
+  .flex-item_01 {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin-left: 0px;
+    width: 600px;
+    height: 700px;
+    gap: 30px;
+    align-items: center;
+  }
+  
+  .flex-item_01 figure:nth-child(1) img {
+    transform: scale(1.1);
+    margin-top: -350px;
+  }
+
+  .flex-item_01 figure:nth-child(2) img {
+    margin-top: 200px;
+    margin-left: -40px;
+  }
+
+  .flex-item_01 figure:nth-child(3) img {
+    margin-top: 160px;
+    margin-left: -550px;
+  }
+
+  .flex-item_01 figure:nth-child(4) img {
+    margin-left: -100px;
+  }
+
+  .flex-item_01 figure:nth-child(5) img {
+    transform: scale(1.1);
+    margin-top: 170px;
+    margin-left: -20px;
+  }
+
+  .flex-item_01 figure:nth-child(6) img {
+    position: relative;
+    transform: scale(1.2);
+    margin-top: 160px;
+    margin-left: -30px;
+    z-index: 2;
+  }
+
+  .flex-item_01 figure:nth-child(7) img {
+    position: relative;
+    transform: scale(1.2);
+    margin-top: -300px;
+    margin-left: 30px;
+    z-index: 1;
+  }
+
+  .flex-item_01 figure:nth-child(8) img {
+    position: relative;
+    transform: scale(1.2);
+    margin-top: -900px;
+    margin-left: -100px;
+  }
+
+  .flex-item_01 figure:nth-child(9) img {
+    transform: scale(1.1);
+    margin-top: 180px;
+    margin-left: 180px;
+  }
+
+  .flex-item_01 figure:nth-child(10) img {
+    margin-top: 370px;
+    margin-left: 90px;
+    transform: scale(1.1);
+  }
+
+  .flex-item_01 figure:nth-child(11) img {
+    margin-left: 330px;
+  }
+
+
+  /*HOVER EFFECT*/
+  .hover-img {
+    position: absolute;
+    left: -100px;
+    top: 0;
+    opacity: 0;
+    transform: scale(0.6);
+    transition: opacity 0.2s ease-in;
+  }
+  
+  .hover-wrapper:hover .main-img {
+    opacity: 0;
+  }
+
+  .hover-wrapper:hover .hover-img {
+    opacity: 1;
+    transform: scale(0.6);
+    left: 0px;
+  }
+
+  .hover-img_01 {
+    position: absolute;
+    opacity: 0;
+    transform: scale(0.6);
+    transition: opacity ease-in;
+  }
+  
+  .hover-wrapper:hover .main-img_01 {
+    opacity: 0;
+  }
+
+  .hover-wrapper:hover .hover-img_01 {
+    opacity: 1;
+    transform: scale(0.7);
+    left: 600px;
+    top: -170px;
+  }
+
+  .hover-img_02,
+  .main-img_02 {
+    opacity: 0;
+  }
+  
+  .hover-wrapper:hover .main-img_02 {
+    opacity: 0;
+  }
+
+  .hover-wrapper:hover .hover-img_02 {
+    opacity: 0;
+  }
+
+  .hover-img_03{
+    position: absolute;
+    left: 1700px;
+    top: -140px;
+    opacity: 0;
+    transform: scale(0.65);
+    transition: opacity 0.3s ease-in;
+  }
+  
+  .hover-wrapper:hover .main-img_03 {
+    opacity: 0.4;
+  }
+
+  .hover-wrapper:hover .hover-img_03 {
+    opacity: 1;
+    transform: scale(0.65);
+    left: 1700px;
+    z-index: 1;
+  }
+
+  .hover-img_04{
+    position: absolute;
+    left: 3200px;
+    top: -140px;
+    opacity: 0;
+    transform: scale(1.1);
+    transition: opacity ease-in;
+  }
+  
+  .hover-wrapper:hover .main-img_04 {
+    opacity: 0.4;
+  }
+
+  .hover-wrapper:hover .hover-img_04 {
+    opacity: 1;
+    transform: scale(1.1);
+    left: 3200px;
+    z-index: 3;
+  }
+
+  .hover-video_04 {
+    position: absolute;
+    top: 0;
+    left: 3500px;
+    width: 100%; /* 이미지와 같은 크기 */
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2; /* 이미지 위에 오도록 */
+  }
+
+  .flex-item_01 .hover-wrapper:hover .hover-video_04 {
+    opacity: 1;
+    z-index: 2; 
+  }
+
+  .hover-img_05{
+    position: absolute;
+    left: -100px;
+    top: -800px;
+    opacity: 0;
+    transform: scale(1.1);
+    transition: opacity 0.3s ease-in;
+  }
+  
+  .hover-wrapper:hover .main-img_05 {
+    opacity: 0.4;
+  }
+
+  .hover-wrapper:hover .hover-img_05 {
+    opacity: 1;
+    transform: scale(1.1);
+    top: -800px;
+    left: -100px;
+    z-index: 4;
+  }
+
+  .hover-video_05 {
+    position: absolute;
+    top: 0;
+    left: 4550px;
+    width: 100%; /* 이미지와 같은 크기 */
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2; /* 이미지 위에 오도록 */
+  }
+
+  .flex-item_01 .hover-wrapper:hover .hover-video_05 {
+    opacity: 1;
+    z-index: 2; 
+  }
+
+  .hover-img_06{
+    position: absolute;
+    left: -450px;
+    top: -300px;
+    opacity: 0;
+    transform: scale(1.1);
+    transition: opacity ease-in;
+  }
+  
+  .hover-wrapper:hover .main-img_06 {
+    opacity: 0.4;
+  }
+
+  .hover-wrapper:hover .hover-img_06 {
+    opacity: 1;
+    transform: scale(1.1);
+    top: -160px;
+    left: -450px;
+    z-index: 3;
+  }
+
+  .hover-video_06 {
+    position: absolute;
+    top: 160px;
+    left: 5280px;
+    width: 100%; /* 이미지와 같은 크기 */
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    transform: scale(1.1);
+    z-index: 2; /* 이미지 위에 오도록 */
+  }
+
+  .flex-item_01 .hover-wrapper:hover .hover-video_06 {
+    opacity: 1;
+    z-index: 2; 
+  }
+
+  .hover-img_07 {
+    position: absolute;
+    left: -450px;
+    top: -300px;
+    opacity: 0;
+    transform: scale(0.75);
+    transition: opacity ease-in;
+  }
+  
+  .hover-wrapper:hover .main-img_07 {
+    opacity: 0.4;
+  }
+
+  .hover-wrapper:hover .hover-img_07 {
+    opacity: 1;
+    transform: scale(0.75);
+    top: -160px;
+    left: 80px;
+    z-index: 3;
+  }
+
+  .hover-video_07 {
+    position: absolute;
+    top: 60px;
+    left: 6420px;
+    width: 100%; /* 이미지와 같은 크기 */
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    transform: scale(0.75);
+    z-index: 2; /* 이미지 위에 오도록 */
+  }
+
+  .flex-item_01 .hover-wrapper:hover .hover-video_07 {
+    opacity: 1;
+    z-index: 2; 
+  }
+
+  .hover-img_08 {
+    position: absolute;
+    left: 6150px;
+    top: -275px;
+    opacity: 0;
+    transform: scale(0.75);
+    transition: opacity ease-in;
+  }
+  
+  .hover-wrapper:hover .main-img_08 {
+    opacity: 0.4;
+  }
+
+  .hover-wrapper:hover .hover-img_08 {
+    opacity: 1;
+    transform: scale(0.75);
+    left: 6150px;
+    z-index: 1;
+  }
+
+  .hover-img_09 {
+    position: absolute;
+    left: 5489px;
+    top: -1200px;
+    opacity: 0;
+    transform: scale(0.75);
+    transition: opacity ease-in;
+  }
+  
+  .hover-wrapper:hover .main-img_09 {
+    opacity: 1;
+  }
+
+  .hover-wrapper:hover .hover-img_09 {
+    opacity: 1;
+    transform: scale(0.4);
+    left: 5490px;
+    z-index: 1;
+  }
+
+  .hover-img_09_02 {
+    position: absolute;
+    left: 7780px;
+    top: -312px;
+    opacity: 0;
+    transform: scale(0.75);
+    transition: opacity ease-in;
+  }
+
+  .hover-wrapper:hover .main-img_09_02 {
+    opacity: 1;
+  }
+
+  .hover-wrapper:hover .hover-img_09_02 {
+    opacity: 1;
+    transform: scale(0.75);
+    left: 7780px;
+    z-index: 2;
+  }
+  
+  .hover-img_10 {
+    position: absolute;
+    left: -450px;
+    top: -300px;
+    opacity: 0;
+    transform: scale(0.75);
+    transition: opacity ease-in;
+  }
+  
+  .hover-wrapper:hover .main-img_10 {
+    opacity: 0.4;
+  }
+
+  .hover-wrapper:hover .hover-img_10 {
+    opacity: 1;
+    transform: scale(0.75);
+    top: -160px;
+    left: 80px;
+    z-index: 3;
+  }
+
+  .hover-video_10 {
+    position: absolute;
+    top: -30px;
+    left: 8500px;
+    width: 100%; /* 이미지와 같은 크기 */
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    transform: scale(0.8);
+    z-index: 2; /* 이미지 위에 오도록 */
+  }
+
+  .flex-item_01 .hover-wrapper:hover .hover-video_10 {
+    opacity: 1;
+    z-index: 2; 
+  }

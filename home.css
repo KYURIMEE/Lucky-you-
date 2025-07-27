@@ -1,0 +1,192 @@
+@font-face {
+    font-family: 'Chaumont Script';
+    src: url('assets/Chaumont_scriptBeta-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: #FDF1D4;
+    text-align: center;
+    font-family: 'Podkova', serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: auto;
+    /* height: 100vh;
+    white-space: nowrap; */
+    min-height: 100vh;
+    position: relative;
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 150px auto 0 auto;
+    z-index: 1;
+    top: 300px;
+}
+
+.menu .menu-item_01,
+.menu .menu-item_02 {
+    font-size: clamp(40px, 7vw, 100px);
+    color: #4B3621;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.menu .menu-item_01:hover,
+.menu .menu-item_02:hover {
+    color: #896647;
+    transition: color 0.3s ease; 
+}
+
+.menu .main-image {
+    /* flex-basis: 100%; */
+    display: flex;
+    justify-content: center;
+}
+
+.menu .main-image img {
+    display: flex;
+    flex: 1 0.5 100%;
+    margin-top: 20px;
+    top: 60px;
+    width: 70vw;
+    max-width: 800px;
+    height: auto;
+}
+
+.sub-text {
+    margin-top: 400px;
+    font-size: clamp(14px, 2vw, 20px);
+    line-height: 1.6;
+    color: rgb(75, 54, 33);
+    display: flex;
+    flex: 1 1 100%;
+    gap: 7vw;
+    flex-wrap: wrap;
+    padding: 0 20px 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.sub-text span {
+    min-width: 130px;
+    text-align: center;
+}
+
+.sub-text a {
+    color: rgb(75, 54, 33);
+    text-decoration: none;
+}
+
+.sub-text span:hover,
+.sub-text a:hover {
+    font-weight: 600;
+    transition: font-weight 0.1s ease-in-out;
+}
+
+.cursor-found:hover {
+    cursor: url('images/found_cursor.png'), auto;
+  }
+  
+  .cursor-altered:hover {
+    cursor: url('images/altered_cursor.png'), auto;
+  }
+  
+  .cursor-made:hover {
+    cursor: url('images/made_cursor.png'), auto;
+  }
+
+  .lucky-cursor:hover {
+    cursor: url(images/home_cursor.png), auto;
+  }
+
+  .side-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #4B3621;
+    box-shadow: -3px 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    transition: right 0.4s ease;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;
+  }
+
+  .side-menu a {
+    color: #4B3621;
+    text-decoration: none;
+    transition: font-weight 0.1s ease;
+  }
+
+  .side-menu a:hover {
+    font-weight: 600;
+  }
+  
+  .side-menu.open {
+    right: 0;
+  }
+  
+  .side-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+  }
+  
+  .close-btn {
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .menu-title {
+    font-size: 25px;
+    line-height: 1.6;
+  }
+  
+  .side-menu-body p {
+    margin: 5px;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+
+  .side-menu-body p:last-of-type {
+    margin-top: 500px;  /* 원하는 간격(px 단위) */
+  }
+  
+  .menu-script {
+    font-family: 'Chaumont Script', cursive;
+    font-size: 30px;
+    color: #4B3621;
+    text-decoration: none;
+  }
+  
+  .menu-script:hover {
+    font-weight: 600;
+  }
+  
+.copyright {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
