@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="luckyyou.css">
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Podkova:wght@400..800&family=Saira:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="logo.css">
+  <title>Lucky You</title>
+</head>
+
+<body>
+  <div class="logo-wrapper">
+    <div class="logo">
+      <a href="home.html"><img src="images/logo(B).png" alt=""></a>
+    </div>
+  </div>
+
+  <div class="menu">
+    <div class="menu-item_01">
+      <span><a href="send.html">+</a></span>
+    </div>
+    <div class="main-image">
+      <img class="lucky-cursor" src="images/type logo.png" alt="Lucky You">
+    </div>
+    <!-- 🔧 클릭 시 메뉴 열기 -->
+    <div class="menu-item_02" onclick="openMenu()">≡</div>
+  </div>
+
+  <div class="sub-text">
+    <span><a href="found-page.html" class="cursor-found">found for you</a></span>
+    <span><a href="altered.html" class="cursor-altered">altered for you</a></span>
+    <span><a href="made.html" class="cursor-made">made for you</a></span>
+  </div>
+
+  <!-- 🔧 슬라이드 메뉴 추가 -->
+  <div id="sideMenu" class="side-menu">
+    <div class="side-menu-header">
+      <span class="menu-title">WHAT I HAVE</span>
+      <span class="close-btn" onclick="closeMenu()">×</span>
+    </div>
+    <div class="side-menu-body">
+        <p>
+            <a href="found-page.html">👀 I FOUND IT</a><br>
+            <a href="altered.html">🧵 I ALTERED IT</a><br>
+            <a href="made.html">🧚‍♂️ I MADE IT</a><br>
+            <a href="send.html">🌬️ SEND ME YOUR LUCK!</a>
+          </p>
+      <p>
+        <a href="about.html" class="menu-script">About</a><br>
+        <a href="contact.html" class="menu-script">Contact</a><br>
+        <a href="https://www.instagram.com/lucky_you.n.me?igsh=MWp0ZTRuZDUzZnBlMg%3D%3D&utm_source=qr" target="_blank" class="menu-script">Instagram</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- 🔧 자바스크립트 추가 -->
+  <script>
+    function openMenu() {
+      document.getElementById('sideMenu').classList.add('open');
+    }
+
+    function closeMenu() {
+      document.getElementById('sideMenu').classList.remove('open');
+    }
+  </script>
+
+<p class="copyright">© Lucky You. All rights reserved.<br>
+Project by Kyuri</p>
+
+</body>
+</html>

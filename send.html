@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lucky You</title>
+  <link rel="stylesheet" href="send.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Podkova&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="background"></div>
+
+  <div class="logo-wrapper">
+    <div class="logo">
+      <a href="home.html"><img src="images/logo(B).png" alt="Lucky You logo" /></a>
+    </div>
+  </div>
+
+  <div class="upload-container">
+    <h2 class="upload-title">Send me your luck!</h2>
+    <p class="upload-description">
+      <br>
+      [HOW TO]<br>
+      Set up your nickname<br>
+      → Upload image with title<br>
+      → Click the select button<br>
+      → Wait a few days for the update !!!
+    </p>
+
+    <form id="upload-form">
+      <input type="text" name="user_name" placeholder="Your name or nickname" class="nickname-input" required />
+      <label for="imageUpload" class="custom-upload-button">Find</label>
+      <input type="file" name="image_file" id="imageUpload" accept="image/*" required />
+      <button type="submit" class="send-btn">Send</button>
+    </form>
+
+    <p class="upload-instruction">
+      Maximum file size is 50Kb. If you have a larger file, DM me!<br>
+      @LUCKY_YOU.N.ME
+    </p>
+
+    <div class="reset-wrapper">
+      <button id="reset-btn" class="reset-button">
+        <img src="images9/Reset.png" alt="Reset" class="reset-icon" />
+      </button>
+    </div>
+
+  </div>
+
+  <div class="image-wrapper">
+    <figure class="draggable" style="left: 100px;">
+      <img src="images9/send 1.jpeg" alt="yellow flowers" />
+      <figcaption>EGG FLOWERS_WOO</figcaption>
+    </figure>
+  
+    <figure class="draggable" style="left: 600px;">
+      <img src="images9/send 3.jpeg" alt="purple flowers" />
+      <figcaption>GOLDEN DOT_EMILY</figcaption>
+    </figure>    
+  
+    <figure class="draggable" style="left: 1100px;">
+      <img src="images9/send 2.jpeg" alt="sunset" />
+      <figcaption>PINKY_CARA</figcaption>
+    </figure>
+  </div>  
+
+  <script>
+    const draggables = document.querySelectorAll('.draggable');
+    const initialPositions = new Map();
+
+    window.addEventListener('load', () => {
+      draggables.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        const parentRect = el.offsetParent.getBoundingClientRect();
+        const left = rect.left - parentRect.left;
+        const top = rect.top - parentRect.top;
+
+        el.style.position = 'absolute';
+        el.style.left = left + 'px';
+        el.style.top = top + 'px';
+
+        initialPositions.set(el, { left, top });
+      });
+    });
+
+    let isDragging = false, target = null, offsetX = 0, offsetY = 0;
+
+    document.addEventListener('mousedown', (e) => {
+  const draggableEl = e.target.closest('.draggable');
+  if (draggableEl) {
+    isDragging = true;
+    target = draggableEl;
+    const rect = target.getBoundingClientRect();
+    const parentRect = target.offsetParent.getBoundingClientRect();
+    offsetX = e.clientX - rect.left;
+    offsetY = e.clientY - rect.top;
+    target.style.cursor = 'grabbing';
+    e.preventDefault();
+  }
+});
+
+    document.addEventListener('mousemove', (e) => {
+      if (isDragging && target) {
+        const parentRect = target.offsetParent.getBoundingClientRect();
+        const left = e.clientX - parentRect.left - offsetX;
+        const top = e.clientY - parentRect.top - offsetY;
+        target.style.left = `${left}px`;
+        target.style.top = `${top}px`;
+      }
+    });
+
+    document.addEventListener('mouseup', () => {
+      if (isDragging && target) {
+        target.style.cursor = 'grab';
+        isDragging = false;
+        target = null;
+      }
+    });
+
+    document.getElementById('reset-btn').addEventListener('click', () => {
+      draggables.forEach(el => {
+        const { left, top } = initialPositions.get(el);
+        el.style.left = left + 'px';
+        el.style.top = top + 'px';
+      });
+    });
+  </script>
+</body>
+</html>
