@@ -1,0 +1,32 @@
+h1 image {
+	max-width: 50px;
+	width: 50%;
+	height: 50%;
+	left: 50%;
+	margin: 0 0 0 -75px;
+	cursor: pointer;
+}
+
+nav {
+	right: 25px;
+	position: fixed;
+	top: 20px;
+	letter-spacing: 1px;
+}
+
+body {
+	background-color: #fff3d6; /* assign a light gray background color to the body element */
+	color: rgb(58 65 72); /* set the text color to dark gray */
+	font: 400 15px/1.5 Saira, sans-serif; /* set the font properties */
+	letter-spacing: 0.2px; /* enhance the appearance of the text by adding letter spacing */
+	margin: 0; /* zero out the body element's default margins */
+}
+main {
+	background-color: var(--gray_f8); /* color the background a very light gray */
+	display: flow-root; /* create a new block-formatting context to prevent the page heading's top margin from escaping its parent container */
+	max-width: 1200px; /* allow the page wrapper to expand to a maximum width of 1200 pixels */
+	min-height: 100vh; /* make the page wrapper no less than the height of the browser viewport */
+	margin: 0 auto; /* use left and right auto margins to center the page wrapper within the viewport */
+	padding: 0 100px 80px; /* top left-right bottom */
+}
+
