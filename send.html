@@ -41,11 +41,10 @@
     </p>
 
     <div class="reset-wrapper">
-      <button id="reset-btn" class="reset-button">
+      <button id="reset-btn" class="reset-button" type="button">
         <img src="images9/Reset.png" alt="Reset" class="reset-icon" />
       </button>
     </div>
-
   </div>
 
   <div class="image-wrapper">
@@ -66,6 +65,7 @@
   </div>  
 
   <script>
+    // 드래그 위치 저장
     const draggables = document.querySelectorAll('.draggable');
     const initialPositions = new Map();
 
@@ -84,21 +84,22 @@
       });
     });
 
+    // 드래그 기능
     let isDragging = false, target = null, offsetX = 0, offsetY = 0;
 
     document.addEventListener('mousedown', (e) => {
-  const draggableEl = e.target.closest('.draggable');
-  if (draggableEl) {
-    isDragging = true;
-    target = draggableEl;
-    const rect = target.getBoundingClientRect();
-    const parentRect = target.offsetParent.getBoundingClientRect();
-    offsetX = e.clientX - rect.left;
-    offsetY = e.clientY - rect.top;
-    target.style.cursor = 'grabbing';
-    e.preventDefault();
-  }
-});
+      const draggableEl = e.target.closest('.draggable');
+      if (draggableEl) {
+        isDragging = true;
+        target = draggableEl;
+        const rect = target.getBoundingClientRect();
+        const parentRect = target.offsetParent.getBoundingClientRect();
+        offsetX = e.clientX - rect.left;
+        offsetY = e.clientY - rect.top;
+        target.style.cursor = 'grabbing';
+        e.preventDefault();
+      }
+    });
 
     document.addEventListener('mousemove', (e) => {
       if (isDragging && target) {
@@ -118,12 +119,20 @@
       }
     });
 
+    // 리셋 버튼
     document.getElementById('reset-btn').addEventListener('click', () => {
       draggables.forEach(el => {
         const { left, top } = initialPositions.get(el);
         el.style.left = left + 'px';
         el.style.top = top + 'px';
       });
+    });
+
+    // 폼 제출 처리
+    document.getElementById('upload-form').addEventListener('submit', function (e) {
+      e.preventDefault(); // 기본 새로고침 방지
+      alert('Thanks! Your luck has been sent :)');
+      // 실제 업로드를 하고 싶다면 여기에 Firebase나 서버 연동 추가
     });
   </script>
 </body>

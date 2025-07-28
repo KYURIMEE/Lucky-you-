@@ -84,6 +84,12 @@ input[type="file"] {
   padding: 10px 25px;
   border: none;
   border-radius: 20px;
+  cursor: pointer; /* ✅ 손모양 커서 추가 */
+  transition: background-color 0.3s ease;
+}
+
+.send-btn:hover {
+  background-color: #45a049; /* ✅ hover 효과 추가 */
 }
 
 .upload-instruction {
@@ -195,3 +201,4 @@ figure.draggable figcaption {
   font-size: 14px;
   color: #3a3223;
 }
+
